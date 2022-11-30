@@ -1,4 +1,4 @@
-- unused variables (player1Name, player2Name)
+[x] unused variables (player1Name, player2Name)
 - unclear variable names
 - p1,p2 is not clear
 - against dry (strings duplicated)
