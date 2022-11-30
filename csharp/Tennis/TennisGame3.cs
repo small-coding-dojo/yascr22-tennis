@@ -16,16 +16,17 @@ namespace Tennis
         public string GetScore()
         {
             string score;
+            
             if (scoreIsInGame())
             {
                 string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
                 score = p[_player1Score];
                 return (_player1Score == _player2Score) ? score + "-All" : score + "-" + p[_player2Score];
             }
-            
-            
             if (_player1Score == _player2Score)
                 return "Deuce";
+            
+            
             score = _player1Score > _player2Score ? _player1Name : _player2Name;
             return ((_player1Score - _player2Score) * (_player1Score - _player2Score) == 1) ? "Advantage " + score : "Win for " + score;
             
@@ -33,7 +34,9 @@ namespace Tennis
 
         private bool scoreIsInGame()
         {
-            return (_player1Score < 4 && _player2Score < 4) && (_player1Score + _player2Score < 6);
+            int maxScoreThreshold = 6;
+            int maxIndividualScore = 4;
+            return (_player1Score < maxIndividualScore && _player2Score < maxIndividualScore) && (_player1Score + _player2Score < maxScoreThreshold);
         }
 
         public void WonPoint(string playerName)
