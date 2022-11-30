@@ -2,6 +2,13 @@ namespace Tennis
 {
     public class TennisGame2 : ITennisGame
     {
+        private const string LoveString = "Love";
+        private const string FifteenString = "Fifteen";
+        private const string ThirtyString = "Thirty";
+        private const string DashAllString = "-All";
+        private const string DeuceString = "Deuce";
+        private const string FortyString = "Forty";
+        private const string SeperatorString = "-";
         private int p1point;
         private int p2point;
 
@@ -23,64 +30,64 @@ namespace Tennis
             if (p1point == p2point && p1point < 3)
             {
                 if (p1point == 0)
-                    score = "Love";
+                    score = LoveString;
                 if (p1point == 1)
-                    score = "Fifteen";
+                    score = FifteenString;
                 if (p1point == 2)
-                    score = "Thirty";
-                score += "-All";
+                    score = ThirtyString;
+                score += DashAllString;
             }
             if (p1point == p2point && p1point > 2)
-                score = "Deuce";
+                score = DeuceString;
 
             if (p1point > 0 && p2point == 0)
             {
                 if (p1point == 1)
-                    p1res = "Fifteen";
+                    p1res = FifteenString;
                 if (p1point == 2)
-                    p1res = "Thirty";
+                    p1res = ThirtyString;
                 if (p1point == 3)
-                    p1res = "Forty";
+                    p1res = FortyString;
 
-                p2res = "Love";
-                score = p1res + "-" + p2res;
+                p2res = LoveString;
+                score = p1res + SeperatorString + p2res;
             }
             if (p2point > 0 && p1point == 0)
             {
                 if (p2point == 1)
-                    p2res = "Fifteen";
+                    p2res = FifteenString;
                 if (p2point == 2)
-                    p2res = "Thirty";
+                    p2res = ThirtyString;
                 if (p2point == 3)
-                    p2res = "Forty";
+                    p2res = FortyString;
 
-                p1res = "Love";
-                score = p1res + "-" + p2res;
+                p1res = LoveString;
+                score = p1res + SeperatorString + p2res;
             }
 
             if (p1point > p2point && p1point < 4)
             {
                 if (p1point == 2)
-                    p1res = "Thirty";
+                    p1res = ThirtyString;
                 if (p1point == 3)
-                    p1res = "Forty";
+                    p1res = FortyString;
                 if (p2point == 1)
-                    p2res = "Fifteen";
+                    p2res = FifteenString;
                 if (p2point == 2)
-                    p2res = "Thirty";
-                score = p1res + "-" + p2res;
+                    p2res = ThirtyString;
+                score = p1res + SeperatorString + p2res;
             }
             if (p2point > p1point && p2point < 4)
             {
                 if (p2point == 2)
-                    p2res = "Thirty";
+                    p2res = ThirtyString;
                 if (p2point == 3)
-                    p2res = "Forty";
+                    p2res = FortyString;
                 if (p1point == 1)
-                    p1res = "Fifteen";
+                    p1res = FifteenString;
                 if (p1point == 2)
-                    p1res = "Thirty";
-                score = p1res + "-" + p2res;
+                    p1res = ThirtyString;
+                score = p1res + SeperatorString + p2res;
             }
 
             if (p1point > p2point && p2point >= 3)
