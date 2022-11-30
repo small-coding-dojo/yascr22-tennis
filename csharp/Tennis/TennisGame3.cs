@@ -1,3 +1,5 @@
+using System;
+
 namespace Tennis
 {
     public class TennisGame3 : ITennisGame
@@ -44,10 +46,11 @@ namespace Tennis
 
         public void WonPoint(string playerName)
         {
-            if (playerName == "player1")
+            if (playerName == p1N)
                 this.p1 += 1;
-            else
+            else if (playerName == p2N)
                 this.p2 += 1;
+            else throw new ArgumentException($"{playerName} is unknown", nameof(playerName));
         }
 
     }
