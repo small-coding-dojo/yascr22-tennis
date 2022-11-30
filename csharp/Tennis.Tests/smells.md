@@ -1,11 +1,14 @@
-- unused variables
+- unused variables (player1Name, player2Name)
 - unclear variable names
 - p1,p2 is not clear
-- againt dry (strings duplicated)
+- against dry (strings duplicated)
   - nested if blocks look the same
 - multiple and nested if's
 - high cyclic comlexity
 - global variables used in GetScore Method (line 45 p2res, p1res)
 - GetScore is a long function
 - magic numbers + strings are used
-- unused methods
+- unused methods (SetP1Score, SetP2Score)
+- the name is unclear for method P1Score, P2Score
+  - change state of the global variable
+- wonPoint method using magic string ("player1")
