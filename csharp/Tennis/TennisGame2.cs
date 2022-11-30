@@ -1,3 +1,5 @@
+using System;
+
 namespace Tennis
 {
     public class TennisGame2 : ITennisGame
@@ -7,14 +9,15 @@ namespace Tennis
 
         private string p1res = "";
         private string p2res = "";
-        private string player1Name;
-        private string player2Name;
+        private readonly string player1Name;
+        private readonly string player2Name;
 
         public TennisGame2(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
             p1point = 0;
             this.player2Name = player2Name;
+            p2point = 0;
         }
 
         public string GetScore()
@@ -132,12 +135,19 @@ namespace Tennis
 
         public void WonPoint(string player)
         {
-            if (player == "player1")
+            if (player.Equals(player1Name))
+            {
                 P1Score();
-            else
+            }
+            else if (player.Equals(player2Name))
+            {
                 P2Score();
+            }
+            else
+            {
+                throw new Exception("Player name '" + player + "' unknown.");
+            }
         }
-
     }
 }
 
