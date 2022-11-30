@@ -4,18 +4,15 @@ namespace Tennis
     {
         private int _player1Point;
         private int _player2Point;
-
-        private string p1res = "";
-        private string p2res = "";
-
-        public TennisGame2()
-        {
-            _player1Point = 0;
-        }
+        
+        
 
         public string GetScore()
         {
             var score = "";
+            var p2res = "";
+            var p1res = "";
+                
             if (_player1Point == _player2Point && _player1Point < 3)
             {
                 if (_player1Point == 0)
