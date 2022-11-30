@@ -1,4 +1,11 @@
 - unused variables
 - unclear variable names
 - p1,p2 is not clear
-- 
+- againt dry (strings duplicated)
+  - nested if blocks look the same
+- multiple and nested if's
+- high cyclic comlexity
+- global variables used in GetScore Method (line 45 p2res, p1res)
+- GetScore is a long function
+- magic numbers + strings are used
+- unused methods
