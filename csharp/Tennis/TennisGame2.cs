@@ -14,6 +14,15 @@ namespace Tennis
 
         private string _p1Result = "";
         private string _p2Result = "";
+        private readonly string _player1Name;
+        private readonly string _player2Name;
+
+
+        public TennisGame2(string player1Name, string player2Name)
+        {
+            _player1Name = player1Name;
+            _player2Name = player2Name;
+        }
 
         public string GetScore()
         {
@@ -83,21 +92,21 @@ namespace Tennis
 
             if (_p1point > _p2point && _p2point >= 3)
             {
-                score = "Advantage player1";
+                score = "Advantage " + _player1Name;
             }
 
             if (_p2point > _p1point && _p1point >= 3)
             {
-                score = "Advantage player2";
+                score = "Advantage " + _player2Name;
             }
 
             if (_p1point >= 4 && _p2point >= 0 && (_p1point - _p2point) >= 2)
             {
-                score = "Win for player1";
+                score = "Win for " + _player1Name;
             }
             if (_p2point >= 4 && _p1point >= 0 && (_p2point - _p1point) >= 2)
             {
-                score = "Win for player2";
+                score = "Win for " + _player2Name;
             }
             return score;
         }
@@ -105,7 +114,7 @@ namespace Tennis
 
         public void AddOnePointToPlayer(string player)
         {
-            if (player == "player1")
+            if (player == _player1Name)
                 _p1point++;
             else
                 _p2point++;
