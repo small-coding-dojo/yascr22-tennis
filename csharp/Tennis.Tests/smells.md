@@ -6,8 +6,8 @@
   - if statement is hard to understand
   - body of the if statements can be in a method which describe what it is doing actually
   - magic numbers are unclear in method GetScore
-  - else is not necessary
-  - "guard clause" can be moved to the top of the function between line 27 and 28
+  - [x] else is not necessary
+  - [] "guard clause" can be moved to the top of the function between line 27 and 28
   - line 29 might be a self explanatory method in english
   - line 30 as well might be a self explanatory method in english
 - WonPoint method
