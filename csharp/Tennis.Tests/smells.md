@@ -1,6 +1,6 @@
-- unclear variable names like p1, p2, p1N, p2N
-- TennisGame3 is not clear name what it suppose to do
-- unnecessary "this" keyword in constructor
+- [x] unclear variable names like p1, p2, p1N, p2N 
+- [ ] TennisGame3 is not clear name what it suppose to do 
+- [x] unnecessary "this" keyword in constructor
 - inside GetScore method
   - variable "s" is unclear in GetScore method
   - if statement is hard to understand
