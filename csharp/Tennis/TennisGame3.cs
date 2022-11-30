@@ -2,8 +2,8 @@ namespace Tennis
 {
     public class TennisGame3 : ITennisGame
     {
-        private int p2;
-        private int p1;
+        private int p2; // player 2 points variable names?
+        private int p1; 
         private string p1N;
         private string p2N;
 
@@ -13,10 +13,14 @@ namespace Tennis
             this.p2N = player2Name;
         }
 
+        public bool isAdvantage()
+        {
+            return !((p1 < 4 && p2 < 4) && (p1 + p2 < 6));
+        }
         public string GetScore()
         {
             string s;
-            if ((p1 < 4 && p2 < 4) && (p1 + p2 < 6))
+            if (!isAdvantage())
             {
                 string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
                 s = p[p1];
