@@ -1,0 +1,17 @@
+- unclear variable names like p1, p2, p1N, p2N
+- TennisGame3 is not clear name what it suppose to do
+- unnecessary "this" keyword in constructor
+- inside GetScore method
+  - variable "s" is unclear in GetScore method
+  - if statement is hard to understand
+  - body of the if statements can be in a method which describe what it is doing actually
+  - magic numbers are unclear in method GetScore
+  - else is not necessary
+  - "guard clause" can be moved to the top of the function between line 27 and 28
+  - line 29 might be a self explanatory method in english
+  - line 30 as well might be a self explanatory method in english
+- WonPoint method
+  - changing the state of the global variables (class members) 
+  - name is not reflecting the reality of the method. (can be like SetPoint)
+  - the constructor variable and the method usage does not match, one of the player names must be player1 in this case-
+  - 
