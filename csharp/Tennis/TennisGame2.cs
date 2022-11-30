@@ -17,44 +17,46 @@ namespace Tennis
             this.player2Name = player2Name;
         }
 
+        public string getDeuce()
+        {
+            return "Deuce";
+        }
+        
+        public string getPreDeuceScore(int points)
+        {
+            var score = "";
+            if (points == 0)
+                score = "Love";
+            if (points == 1)
+                score = "Fifteen";
+            if (points == 2)
+                score = "Thirty";
+            if (points == 3)
+                score = "Forty";
+
+            return score;
+        }
+
+        public string getEqualScore()
+        {
+            return "TODO";
+        }
+        
         public string GetScore()
         {
             var score = "";
             if (p1point == p2point && p1point < 3)
             {
-                if (p1point == 0)
-                    score = "Love";
-                if (p1point == 1)
-                    score = "Fifteen";
-                if (p1point == 2)
-                    score = "Thirty";
+                score = getPreDeuceScore(p1point);
                 score += "-All";
             }
             if (p1point == p2point && p1point > 2)
-                score = "Deuce";
+                score = getDeuce();
 
-            if (p1point > 0 && p2point == 0)
+            if ((p1point > 0 && p2point == 0) || (p2point > 0 && p1point == 0))
             {
-                if (p1point == 1)
-                    p1res = "Fifteen";
-                if (p1point == 2)
-                    p1res = "Thirty";
-                if (p1point == 3)
-                    p1res = "Forty";
-
-                p2res = "Love";
-                score = p1res + "-" + p2res;
-            }
-            if (p2point > 0 && p1point == 0)
-            {
-                if (p2point == 1)
-                    p2res = "Fifteen";
-                if (p2point == 2)
-                    p2res = "Thirty";
-                if (p2point == 3)
-                    p2res = "Forty";
-
-                p1res = "Love";
+                p1res = getPreDeuceScore(p1point);
+                p2res = getPreDeuceScore(p2point);
                 score = p1res + "-" + p2res;
             }
 
@@ -64,6 +66,7 @@ namespace Tennis
                     p1res = "Thirty";
                 if (p1point == 3)
                     p1res = "Forty";
+                
                 if (p2point == 1)
                     p2res = "Fifteen";
                 if (p2point == 2)
